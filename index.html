@@ -18,22 +18,37 @@
 <body>
     <div class="app-block">
     <header>
-        <form>
-            <input type="search" placeholder="Enter a city" required />
-            <input type="submit" value="search" />
+        <form class="city-form">
+            <input type="search" placeholder="Enter a city" required class="city-form-input" />
+            <input type="submit" value="Search" class="city-form-button" />
         </form>
     </header>
 
     <main>
+        
+    <div class="weatherapp-data">
     <div>
-        <h1>Barcelona</h1>
-        <p>Day, xx:xx, weather condition
-            <br />
-            Humidity: xx%, Wind: x.xkm/h
-        </p>
-    </div>
-        🌞 20°C
+    <h1>Barcelona</h1>
+    <p>Day, xx:xx, <strong>weather condition</strong>
     <br />
+    Humidity: <strong>xx%</strong>, Wind: <strong>x.xkm/h</strong>
+    </p>
+    </div>
+
+    <div class="temperature-container">
+    <div class="weather-icon">
+    🌞
+    </div>
+
+    <div class="temperature-value">
+    20
+    </div>
+
+    <div class="temperature-unit">
+    °C
+    </div>
+    </div>
+
     </main>
     
     <footer>
