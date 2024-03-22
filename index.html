@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <meta name="viewport" content="width=1, initial-scale=1.0">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +18,8 @@
 <body>
     <div class="app-block">
     <header>
-        <form class="city-form">
-            <input type="search" placeholder="Enter a city" required class="city-form-input" />
+        <form class="city-form" id="search">
+            <input type="search" placeholder="Enter a city" required id="search-input" class="city-form-input" />
             <input type="submit" value="Search" class="city-form-button" />
         </form>
     </header>
@@ -28,7 +28,7 @@
         
     <div class="weatherapp-data">
     <div>
-    <h1>Barcelona</h1>
+    <h1 id="city">Barcelona</h1>
     <p>Day, xx:xx, <strong>weather condition</strong>
     <br />
     Humidity: <strong>xx%</strong>, Wind: <strong>x.xkm/h</strong>
@@ -60,5 +60,6 @@
     <a href="https://main--mj-vanilla-weatherapp.netlify.app/">Netlify</a>
     </footer>
     </div>
+    <script src="src/app.js"></script>
 </body>
 </html>
