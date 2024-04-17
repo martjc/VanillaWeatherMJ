@@ -7,6 +7,10 @@ body {
     color: #482513;
 }
 
+a {
+    color: inherit;
+}
+
 h1 {
     font-family: "Agbalumo", system-ui;
     font-weight: 400;

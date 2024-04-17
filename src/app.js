@@ -1,3 +1,7 @@
+function capitalizeFirstletter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 function updateData(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = response.data.temperature.current;
@@ -6,7 +10,7 @@ function updateData(response) {
   cityElement.innerHTML = response.data.city;
 
   let weatherCondition = document.querySelector("#weather-condition");
-  weatherCondition.innerHTML = response.data.condition.description;
+  weatherCondition.innerHTML = capitalizeFirstletter(response.data.condition.description);
 
   let weatherHumidity = document.querySelector("#humidity");
   weatherHumidity.innerHTML = response.data.temperature.humidity;
@@ -14,22 +18,20 @@ function updateData(response) {
   let weatherWind = document.querySelector("#wind");
   weatherWind.innerHTML = response.data.wind.speed;
 
-  let date = new Date(response.data.time * 1000);
-  let todayDay = document.querySelector("#day");
-  todayDay.innerHTML = formatDate(date);
-  let nowTime = document.querySelector("#hour");
-  nowTime.innerHTML = `${date.getHours()}:${date.getMinutes()}`;
+  let now = new Date();
+  let todayDate = document.querySelector("#today-date");
+  let hour = now.getHours();
+  let formattedHour = hour.toString().padStart(2, '0');
+  let minutes = now.getMinutes();
+  let formattedMinutes = minutes.toString().padStart(2, '0');
 
-console.log(response);
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let day = days[now.getDay()];
+
+  todayDate.innerHTML = `${day}, ${formattedHour}h${formattedMinutes}`; 
 
   temperatureElement.innerHTML = Math.round(temperature);
 }
-
-function formatDate(date) {
-    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",];
-    let day = days[date.getDay()];
-}
-
 
 function searchCity(city) {
 let apiKey = "40ab98f05tabc0e10fc0o4394b7f3da7";
