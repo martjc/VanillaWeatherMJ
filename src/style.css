@@ -3,6 +3,10 @@ body {
     background: linear-gradient(to top, #a861b4 0%, #f7c291 100%);
 }
 
+a {
+    color: #530761;
+}
+
 .app-container {
     background-color: #fed5b0;
     max-width: 600px;
@@ -17,11 +21,17 @@ body {
     color: #530761;
 }
 
+header {
+    border-bottom: 1px solid #af74b9;
+    padding: 0 0 30px 0;
+}
+
 h1 {
+    margin: 0;
     font-family: "Danfo", serif;
     font-size: 60px;
     font-weight: 00;
-    color: #983fa7;
+    color: #af74b9;
     font-style: normal;
     font-variation-settings:
       "ELSH" 0;
@@ -47,4 +57,32 @@ h1 {
     font-family: "Tajawal", sans-serif;
     font-weight: 500;
     font-style: normal;
+}
+
+main {
+    padding: 30px 0;
+}
+
+.app-data
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.temperature-container {
+    display: flex;
+    font-size: 25px;
+    color: #af74b9;
+}
+
+.weather-temperature {
+    font-size: 50px;
+    margin-left: 10px;
+}
+
+footer {
+    border-top: 1px solid #af74b9;
+    padding: 10px 0 0 0;
+    text-align: center;
+    font-size: 11px;
 }
