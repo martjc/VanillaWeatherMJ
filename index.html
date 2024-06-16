@@ -18,8 +18,8 @@
     <div class="app-container">
 
 <header>
-<form class="search-form">
-        <input type="search" placeholder="Enter a city" required class="search-form-input"/>
+<form class="search-form" id="search-form">
+        <input type="search" placeholder="Enter a city" required id="form-input" class="search-form-input"/>
         <input type="submit" value="Search" class="search-form-button"/>
 </form>
 </header>
@@ -31,7 +31,7 @@
 <div class="app-data">
 
 <div>
-<h1>Barcelona</h1>
+<h1 id="city">Barcelona</h1>
     <p>
         Day hour:minutes, weather condition
         <br />
@@ -62,6 +62,7 @@ and hosted on
 </footer>
 
 </div>
-    
+   
+<script src="src/app.js"></script>
 </body>
 </html>
