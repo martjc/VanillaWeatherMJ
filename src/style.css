@@ -1,0 +1,29 @@
+body {
+    height: 100vh;
+    background: linear-gradient(to top, #a861b4 0%, #f7c291 100%);
+}
+
+.app-container {
+    background-color: #fed5b0;
+    max-width: 600px;
+    margin: 50px auto;
+    box-shadow: 0 15px 20px rgb(168, 97, 180, 0.4);
+    border-radius: 25px;
+    padding: 30px;
+
+    font-family: "Tajawal", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #530761;
+}
+
+h1 {
+    font-family: "Danfo", serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #983fa7;
+    font-style: normal;
+    font-variation-settings:
+      "ELSH" 0;
+    
+}
