@@ -1,8 +1,10 @@
 function refreshWeather(response) {
     let temperatureElement = document.querySelector(".weather-temperature");
     let temperature = response.data.temperature.current;
+    let weatherconditionsElement = document.querySelector("#conditions");
 
     temperatureElement.innerHTML = Math.round(temperature);
+    weatherconditionsElement.innerHTML = response.data.condition.description;
 }
 
 
@@ -13,7 +15,6 @@ function searchCity(city) {
  axios.get(apiUrl).then(refreshWeather);
 }
 
-
 function handleSubmit(event) {
     event.preventDefault();
     let searchInput = document.querySelector("#form-input");
@@ -22,7 +23,7 @@ function handleSubmit(event) {
     searchCity(searchInput.value);
 }
 
+searchCity("Barcelona");
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSubmit);
-
-searchCity("Barcelona");
