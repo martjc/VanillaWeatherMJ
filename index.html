@@ -34,7 +34,7 @@
 <div>
 <h1 class="city">Barcelona</h1>
     <p>
-        <span id="datetime">Day hour:minutes</span>, <b><span id="conditions">weather condition</span></b>
+        <span id="datetime">Day hour:minutes</span> (CEST timezone), <b><span id="conditions">weather condition</span></b>
         <br />
         Humidity: <b><span id="humidity"></span>%</b>, Wind: <b><span id="windspeed"></span> km/h</b>
     </p>
@@ -42,7 +42,9 @@
 
 
 <div class="temperature-container">
-    <div class="weather-icon">** </div>
+    <div id="icon">
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-day.png" class="weather-icon">
+    </div>
     <div class="weather-temperature"></div>
     <div class="temperature-unit">°C</div>
 </div>

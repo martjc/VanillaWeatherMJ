@@ -75,10 +75,19 @@ main {
     color: #af74b9;
 }
 
+.weather-icon {
+    width: 80px;
+    height: 80px
+}
+
 .weather-temperature {
     font-size: 50px;
-    margin-left: 10px;
+    margin-top: 20px;
     color: #530761;
+}
+
+.temperature-unit {
+    margin-top: 20px;
 }
 
 footer {

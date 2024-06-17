@@ -6,12 +6,16 @@ function refreshWeather(response) {
     let windspeedElement = document.querySelector("#windspeed");
     let timeElement = document.querySelector("#datetime");
     let date = new Date(response.data.time * 1000);
+    let icon = document.querySelector("#icon");
 
     temperatureElement.innerHTML = Math.round(temperature);
     weatherconditionsElement.innerHTML = response.data.condition.description;
     humidityElement.innerHTML = response.data.temperature.humidity;
     windspeedElement.innerHTML = response.data.wind.speed;
     timeElement.innerHTML = formatDate(date);
+    icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"></img>`;
+
+    console.log(response);
 }
 
 function formatDate(date) {
