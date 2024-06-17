@@ -90,6 +90,10 @@ main {
     margin-top: 20px;
 }
 
+.weather-forecast {
+    text-align: center;
+}
+
 footer {
     border-top: 1px solid #af74b9;
     padding: 10px 0 0 0;
