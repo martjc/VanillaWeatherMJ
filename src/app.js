@@ -15,7 +15,6 @@ function refreshWeather(response) {
     timeElement.innerHTML = formatDate(date);
     icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"></img>`;
 
-    console.log(response);
 }
 
 function formatDate(date) {

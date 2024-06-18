@@ -94,6 +94,26 @@ main {
     text-align: center;
 }
 
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.weather-forecast-date {
+    font-size: 14px;
+    text-align: center;
+    color: #a861b4;
+}
+
+.weather-forecast-temperatures {
+    
+}
+
+.weather-forecast-temperature-max {
+    font-weight: bold;
+}
+
 footer {
     border-top: 1px solid #af74b9;
     padding: 10px 0 0 0;
