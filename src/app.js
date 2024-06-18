@@ -34,7 +34,7 @@ function formatDate(date) {
 
 function searchCity(city) {
  let apiKey = "40ab98f05tabc0e10fc0o4394b7f3da7";
- let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+ let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
  axios.get(apiUrl).then(refreshWeather);
 }
@@ -45,6 +45,12 @@ function handleSubmit(event) {
     let cityElement = document.querySelector(".city");
     cityElement.innerHTML = searchInput.value;
     searchCity(searchInput.value);
+}
+
+function getForecast(city) {
+    let apiKey = "40ab98f05tabc0e10fc0o4394b7f3da7";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+    console.log(apiUrl);
 }
 
 function displayForecast () {
@@ -79,5 +85,8 @@ function displayForecast () {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSubmit);
 
+searchCity("barcelona");
+getForecast();
 displayForecast();
-searchCity("Barcelona");
+
+
