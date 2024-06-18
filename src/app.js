@@ -47,7 +47,37 @@ function handleSubmit(event) {
     searchCity(searchInput.value);
 }
 
-searchCity("Barcelona");
+function displayForecast () {
+    let forecastElement = document.querySelector("#forecast");
+    let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    let forecastHtml = "";
+
+    days.forEach(function (day) {
+        forecastHtml = 
+        forecastHtml +
+        `
+        <div class="row">
+        <div class="col-2">
+            <div class="weather-forecast-date">${day}
+            </br>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" width="20">
+            
+            <div class="weather-forecast-temperatures">
+              <span class="weather-forecast-temperature-max">Max°C</span> 
+              <span class="weather-forecast-temperature-min">Min°C </span>
+            </div>
+        
+        </div>
+        </div>
+        </div>
+        `;    
+    });
+
+    forecastElement.innerHTML = forecastHtml;
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSubmit);
+
+displayForecast();
+searchCity("Barcelona");
