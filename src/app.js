@@ -29,7 +29,7 @@ function formatDate(date) {
         minutes = `0${minutes}`;
     }
 
-    return `${day} ${hours}h${minutes}`
+    return `${day} ${hours}h${minutes} |`
 }
 
 
@@ -48,6 +48,13 @@ function handleSubmit(event) {
     searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+    let date = new Date(timestamp * 1000);
+    let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+    return days[date.getDay()];
+}
+
 function getForecast(city) {
     let apiKey = "40ab98f05tabc0e10fc0o4394b7f3da7";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
@@ -55,31 +62,32 @@ function getForecast(city) {
 }
 
 function displayForecast (response) {
-console.log(response.data);
 
     let forecastElement = document.querySelector("#forecast");
-    let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let forecastHtml = "";
 
-    days.forEach(function (day) {
+    response.data.daily.forEach(function (day, index) {
+if (index < 5) {
+
         forecastHtml = 
         forecastHtml +
         `
         <div class="row">
         <div class="col-2">
-            <div class="weather-forecast-date">${day}
+            <div class="weather-forecast-date">${formatDay(day.time)}
             </br>
-            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" width="20">
+            <img src="${day.condition.icon_url}" width="50">
             
             <div class="weather-forecast-temperatures">
-              <span class="weather-forecast-temperature-max">Max°C</span> 
-              <span class="weather-forecast-temperature-min">Min°C </span>
+              <span class="weather-forecast-temperature-max">${Math.round(day.temperature.maximum)}°C </span> 
+              <span class="weather-forecast-temperature-min"> | ${Math.round(day.temperature.minimum)}°C </span>
             </div>
         
         </div>
         </div>
         </div>
-        `;    
+        `;  
+    }  
     });
 
     forecastElement.innerHTML = forecastHtml;
