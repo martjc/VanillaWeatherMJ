@@ -77,18 +77,19 @@ main {
 }
 
 .weather-icon {
-    width: 80px;
-    height: 80px
+    width: 100px;
+    height: 100px
 }
 
 .weather-temperature {
-    font-size: 60px;
+    font-size: 70px;
     margin-top: 15px;
     color: #530761;
 }
 
 .temperature-unit {
     margin-top: 20px;
+    font-size: 40px;
 }
 
 .weather-forecast {
