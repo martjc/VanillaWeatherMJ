@@ -14,7 +14,8 @@ function refreshWeather(response) {
     windspeedElement.innerHTML = response.data.wind.speed;
     timeElement.innerHTML = formatDate(date);
     icon.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-icon"></img>`;
-
+    
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -50,10 +51,12 @@ function handleSubmit(event) {
 function getForecast(city) {
     let apiKey = "40ab98f05tabc0e10fc0o4394b7f3da7";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-    console.log(apiUrl);
+    axios(apiUrl).then(displayForecast);
 }
 
-function displayForecast () {
+function displayForecast (response) {
+console.log(response.data);
+
     let forecastElement = document.querySelector("#forecast");
     let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     let forecastHtml = "";
@@ -86,7 +89,6 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSubmit);
 
 searchCity("barcelona");
-getForecast();
-displayForecast();
+
 
 
